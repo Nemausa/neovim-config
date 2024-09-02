@@ -5,6 +5,7 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "Toggle Comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "Toggle comment", remap = true })
+map('n', '<leader>cf', ':!clang-format -i %<CR><CR>', { noremap = true, silent = true })
 
 -- Move
 map('x', '<A-Up>', ":move '<-2<CR>gv=gv")
