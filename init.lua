@@ -9,6 +9,7 @@ require('config.treesitter')
 require('config.dap_python')
 require('config.dap_cpp')
 require('config.gitsigns')
+require('config.dap_config')
 
 require('core.options')
 require('core.mappings')

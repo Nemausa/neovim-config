@@ -23,6 +23,7 @@ if os_name == 'Linux' then
         pythonPath = function()
           return '/usr/bin/python3.8'
         end,
+        console = 'integratedTerminal',
       },
     }
 
@@ -43,6 +44,7 @@ elseif os_name == 'Windows_NT' then
         pythonPath = function()
           return 'C:\\Python312\\python.exe'
         end,
+        console = 'integratedTerminal',
       },
     }
 elseif os_name == "Darwin" then
@@ -61,6 +63,7 @@ elseif os_name == "Darwin" then
         pythonPath = function()
           return '/usr/bin/python3.8'
         end,
+        console = 'integratedTerminal',
       },
     }
 end
