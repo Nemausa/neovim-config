@@ -35,4 +35,11 @@ require('lazy').setup({
   'neovim/nvim-lspconfig',
   {'neoclide/coc.nvim', branch = 'release'},
   -- 'folke/which-key.nvim',
-})
+  {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && npm install',
+    config = function()
+      vim.g.mkdp_filetypes = { 'markdown' }
+    end
+  }}
+)

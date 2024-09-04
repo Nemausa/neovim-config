@@ -7,6 +7,13 @@ map("n", "<leader>/", "gcc", { desc = "Toggle Comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "Toggle comment", remap = true })
 map('n', '<leader>cf', ':!clang-format -i %<CR><CR>', { noremap = true, silent = true })
 
+-- Gitsigns
+map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
+map("n", "<leader>gcl", ":Gitsigns toggle_current_line_blame<CR>", {})
+
+-- Markdown
+map("n", "<leader>mp", ":MarkdownPreview<CR>", {})
+
 -- Move
 map('x', '<A-Up>', ":move '<-2<CR>gv=gv")
 map('n', '<A-Up>', ":move .-2<CR>==")
@@ -109,6 +116,5 @@ vim.api.nvim_create_user_command('CustomDiffviewOpen', function()
 
   vim.cmd('DiffviewOpen')
 end, {})
-
 map('n', '<leader>do', ':CustomDiffviewOpen<CR>')
-vim.keymap.set('n', '<leader>dc', ':DiffviewClose<CR>')
+map('n', '<leader>dc', ':DiffviewClose<CR>')
