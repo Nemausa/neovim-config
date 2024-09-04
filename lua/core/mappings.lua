@@ -78,6 +78,8 @@ map('n', '<leader>fc', '<cmd>lua require("telescope.builtin").grep_string({ sear
 map("n", "<leader>v", ':vsplit | term<CR>', { desc = "terminal new horizontal term" })
 map("n", "<leader>h", ':split | term<CR>', { desc = "terminal new horizontal term" })
 map('t', '<leader>tq', [[<C-\><C-n>:q<CR>]])
+map('n', '<leader>to', ':belowright new | resize 10 | terminal<CR>i', { noremap = true, silent = true })
+
 
 -- switch header or source file
 map('x', '<A-o>', ":A<CR>")
