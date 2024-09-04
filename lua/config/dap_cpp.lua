@@ -2,14 +2,46 @@ local dap = require('dap')
 local dapui = require('dapui')
 local os_name = vim.loop.os_uname().sysname
 
+local function find_open_debug_ad7()
+  local user_profile = os.getenv("USERPROFILE")
+  local vscode_extensions_path = user_profile .. '\\.vscode\\extensions\\'
+  local command = ''
+
+  -- 遍历扩展目录以查找 OpenDebugAD7.exe
+  for _, ext in ipairs(vim.fn.glob(vscode_extensions_path .. 'ms-vscode.cpptools-*', true, true)) do
+    local potential_path = ext .. '\\debugAdapters\\bin\\OpenDebugAD7.exe'
+    if vim.fn.filereadable(potential_path) == 1 then
+      command = potential_path
+      break
+    end
+  end
+
+  return command
+end
+
 -- 配置 nvim-dap-ui
 dapui.setup()
 
 -- 配置 gdb 调试器适配器
+-- dap.adapters.gdb = {
+--     type = 'executable',
+--     command = '/usr/local/bin/gdb', -- GDB 的命令
+--     args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
+-- }
+
 dap.adapters.gdb = {
     type = 'executable',
     command = '/usr/local/bin/gdb', -- GDB 的命令
     args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
+}
+
+dap.adapters.cppdbg = {
+    id = 'cppdbg',
+    type = 'executable',
+    command = find_open_debug_ad7(),
+    options = {
+        detached = false,
+    }
 }
 
 -- 配置 lldb 调试器适配器
@@ -41,10 +73,24 @@ dap.configurations.c = {
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
-    cwd = "${workspaceFolder}/bin",
-    stopAtBeginningOfMainSubprogram = false,
+    cwd = "${workspaceFolder}",
+    stopOnEntry = false,
+    args = {},
+    runInTerminal = true,
   },
- {
+  {
+    name = "Launch cppdbg",
+    type = "cppdbg",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = "${workspaceFolder}",
+    stopOnEntry = false,
+    args = {},
+    runInTerminal = true,
+  },
+  {
     name = "Launch lldb",
     type = "lldb",
     request = "launch",
@@ -57,7 +103,7 @@ dap.configurations.c = {
 
     -- For C++ debugging
     runInTerminal = false,
-},
+  },
   {
     name = "Select and attach to process",
     type = "gdb",
