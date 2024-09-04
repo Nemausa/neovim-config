@@ -10,17 +10,21 @@ local os_config = {
   Linux = {
       home_var = "HOME",
       extension_subdir = ".vscode-server/extensions/",
-      binary_name = "OpenDebugAD7"
+      binary_name = "OpenDebugAD7",
+      MIMode = "gdb",
   },
   Windows_NT = {
       home_var = "USERPROFILE",
       extension_subdir = ".vscode/extensions/",
-      binary_name = "OpenDebugAD7.exe"
+      binary_name = "OpenDebugAD7.exe",
+      MIMode = "gdb",
   },
   Darwin = {
       home_var = "HOME",
-      extension_subdir = ".vscode-server/extensions/",
-      binary_name = "OpenDebugAD7"  -- 假设 macOS 使用和 Linux 相同的二进制文件
+      -- extension_subdir = ".vscode-server/extensions/",
+      extension_subdir = ".vscode/extensions/",
+      binary_name = "OpenDebugAD7",  -- 假设 macOS 使用和 Linux 相同的二进制文件
+      MIMode = "lldb",
   }
 }
 
@@ -43,12 +47,20 @@ local function find_open_debug_ad7(os_name)
   return ''
 end
 
+local function GetMIMode(os_name)
+  local config = os_config[os_name]
+  if not config then
+      return ''
+  end
+  return config.MIMode
+end
+
 local function setup_dap_adapter(os_name)
   dap.adapters.cppdbg = {
       id = 'cppdbg',
       type = 'executable',
       command = find_open_debug_ad7(os_name),
-      options = { detached = false }
+      options = { detached = false },
   }
 end
 
@@ -76,7 +88,7 @@ elseif os_name == 'Windows_NT' then
 elseif os_name == "Darwin" then
   dap.adapters.lldb = {
     type = 'executable',
-    command = '/usr/bin/lldb-vscode',
+    command = '/usr/bin/lldb',
     name = 'lldb'
   }
 end
@@ -92,7 +104,16 @@ dap.configurations.c = {
     cwd = "${workspaceFolder}",
     stopOnEntry = false,
     args = {},
-    runInTerminal = true,
+    MIMode = GetMIMode(os_name),
+    runInTerminal = false,
+    externalConsole = false,
+    setupCommands = {
+        {
+            text = "-enable-pretty-printing",
+            description = "Enable pretty printing",
+            ignoreFailures = false
+        }
+    },
   },
   {
     name = "Launch gdb",
@@ -119,6 +140,14 @@ dap.configurations.c = {
 
     -- For C++ debugging
     runInTerminal = false,
+    externalConsole = true,
+    setupCommands = {
+        {
+            text = "-enable-pretty-printing",
+            description = "Enable pretty printing",
+            ignoreFailures = false
+        }
+    },
   },
   {
     name = "Select and attach to process",
