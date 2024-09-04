@@ -2,46 +2,62 @@ local dap = require('dap')
 local dapui = require('dapui')
 local os_name = vim.loop.os_uname().sysname
 
-local function find_open_debug_ad7()
-  local user_profile = os.getenv("USERPROFILE")
-  local vscode_extensions_path = user_profile .. '\\.vscode\\extensions\\'
-  local command = ''
-
-  -- 遍历扩展目录以查找 OpenDebugAD7.exe
-  for _, ext in ipairs(vim.fn.glob(vscode_extensions_path .. 'ms-vscode.cpptools-*', true, true)) do
-    local potential_path = ext .. '\\debugAdapters\\bin\\OpenDebugAD7.exe'
-    if vim.fn.filereadable(potential_path) == 1 then
-      command = potential_path
-      break
-    end
-  end
-
-  return command
-end
 
 -- 配置 nvim-dap-ui
 dapui.setup()
 
--- 配置 gdb 调试器适配器
--- dap.adapters.gdb = {
---     type = 'executable',
---     command = '/usr/local/bin/gdb', -- GDB 的命令
---     args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
--- }
+local os_config = {
+  Linux = {
+      home_var = "HOME",
+      extension_subdir = ".vscode-server/extensions/",
+      binary_name = "OpenDebugAD7"
+  },
+  Windows_NT = {
+      home_var = "USERPROFILE",
+      extension_subdir = ".vscode/extensions/",
+      binary_name = "OpenDebugAD7.exe"
+  },
+  Darwin = {
+      home_var = "HOME",
+      extension_subdir = ".vscode-server/extensions/",
+      binary_name = "OpenDebugAD7"  -- 假设 macOS 使用和 Linux 相同的二进制文件
+  }
+}
+
+local function find_open_debug_ad7(os_name)
+  local config = os_config[os_name]
+  if not config then
+      return ''
+  end
+
+  local home_dir = os.getenv(config.home_var)
+  local vscode_extensions_path = home_dir .. '/' .. config.extension_subdir
+  local binary_name = config.binary_name
+
+  for _, ext in ipairs(vim.fn.glob(vscode_extensions_path .. 'ms-vscode.cpptools-*', true, true)) do
+      local potential_path = ext .. '/debugAdapters/bin/' .. binary_name
+      if vim.fn.filereadable(potential_path) == 1 then
+          return potential_path
+      end
+  end
+  return ''
+end
+
+local function setup_dap_adapter(os_name)
+  dap.adapters.cppdbg = {
+      id = 'cppdbg',
+      type = 'executable',
+      command = find_open_debug_ad7(os_name),
+      options = { detached = false }
+  }
+end
+
+setup_dap_adapter(os_name)
 
 dap.adapters.gdb = {
     type = 'executable',
     command = '/usr/local/bin/gdb', -- GDB 的命令
     args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
-}
-
-dap.adapters.cppdbg = {
-    id = 'cppdbg',
-    type = 'executable',
-    command = find_open_debug_ad7(),
-    options = {
-        detached = false,
-    }
 }
 
 -- 配置 lldb 调试器适配器
@@ -67,8 +83,8 @@ end
 
 dap.configurations.c = {
   {
-    name = "Launch gdb",
-    type = "gdb",
+    name = "Launch cppdbg",
+    type = "cppdbg",
     request = "launch",
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
@@ -79,8 +95,8 @@ dap.configurations.c = {
     runInTerminal = true,
   },
   {
-    name = "Launch cppdbg",
-    type = "cppdbg",
+    name = "Launch gdb",
+    type = "gdb",
     request = "launch",
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
@@ -140,3 +156,4 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
+
