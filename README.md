@@ -5,3 +5,12 @@
 [llvm download-17.0.1](https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.1/LLVM-17.0.1-win64.exe)
 [ninja](https://github.com/ninja-build/ninja/releases)
 [gcc](https://winlibs.com/)
+
+#### Markdown
+```
+Windows
+cd ~/AppData/Local/nvim-data/lazy/markdown-preview.nvim
+Ubuntu
+cd ~/.local/share/nvim/site/pack/lazy/start/markdown-preview.nvim
+npm install
+```
