@@ -10,6 +10,7 @@ require('config.dap_python')
 require('config.dap_cpp')
 require('config.gitsigns')
 require('config.dap_config')
+require('config.toggleterm')
 
 require('core.options')
 require('core.mappings')

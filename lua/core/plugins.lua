@@ -41,5 +41,6 @@ require('lazy').setup({
     config = function()
       vim.g.mkdp_filetypes = { 'markdown' }
     end
-  }}
-)
+  },
+  'akinsho/toggleterm.nvim',
+})
