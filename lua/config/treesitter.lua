@@ -6,12 +6,12 @@ local function disable_treesitter_for_large_files(bufnr)
   if ok and stats and stats.size < max_filesize then
     vim.api.nvim_buf_set_option(bufnr, 'syntax', 'on')
     require'nvim-treesitter.configs'.setup {
-      ensure_installed = { "c", "cpp", "python", "cmake", "markdown" },
+      ensure_installed = { "c", "cpp", "python", "cmake", "markdown", "markdown_inline" },
       highlight = {
         enable = true,
         disable = function(_, buf)
           local buf_size = vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf))
-          return buf_size > max_filesize
+          return buf_size < max_filesize
         end,
       },
     }
