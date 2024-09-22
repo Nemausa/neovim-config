@@ -1,5 +1,6 @@
 local map = vim.keymap.set
 map('i', 'jj', '<Esc>')
+map('i', 'kk', '<Esc>')
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 
 -- Comment
@@ -55,7 +56,7 @@ end
 
 vim.api.nvim_create_user_command('Ctags', function()
   local cwd = vim.fn.getcwd()
-  local result = vim.fn.system('ctags -R ' .. cwd)
+  local result = vim.fn.system('ctags -R --languages=C++ --c++-kinds=+px --fields=+iaS --extra=+q ' .. cwd)
   print(result)
 end, {})
 map('n', '<leader>ct', ':Ctags<CR>')

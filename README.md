@@ -14,3 +14,6 @@ Ubuntu
 cd ~/.local/share/nvim/site/pack/lazy/start/markdown-preview.nvim
 npm install
 ```
+
+#### LSP
+- **ctags**: ctags -R --languages=C++ --c++-kinds=+px --fields=+iaS --extra=+q .

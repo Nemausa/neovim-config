@@ -5,4 +5,5 @@
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/snippets"],
   "snippets.ultisnips.pythonPrompt": false,
   "clangd.arguments": ["--header-insertion=never"],
+  "tag.files": "tags",
 }

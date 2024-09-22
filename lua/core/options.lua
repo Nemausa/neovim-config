@@ -15,6 +15,8 @@ vim.opt.colorcolumn = '80'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.g.ale_enabled = 0
+vim.opt.list = true
+vim.opt.listchars:append("space:·")
 
 vim.cmd [[
   let g:gutentags_ctags_exclude = ['.git', 'node_modules', 'build']
