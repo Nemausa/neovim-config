@@ -1,7 +1,7 @@
 local lualine = require('lualine')
 lualine.setup({
   options = {
-    theme = 'onedark',
+    theme = 'github_dark',
     section_separators = '',
     component_separators = '',
   },

@@ -6,4 +6,12 @@
   "snippets.ultisnips.pythonPrompt": false,
   "clangd.arguments": ["--header-insertion=never"],
   "tag.files": "tags",
+  "coc.preferences.jumpCommand": "tags",
+  "coc.source.tag": {
+      "enable": true
+  },
+  "coc.source.tag": {
+    "enable": true,
+    "filetypes": ["cpp", "c", "h"]
+  },
 }
