@@ -21,6 +21,7 @@ require('lazy').setup({
   'nvim-lualine/lualine.nvim',
   'akinsho/bufferline.nvim',
   'nvim-treesitter/nvim-treesitter',
+  'sheerun/vim-polyglot',
   'vim-scripts/a.vim',
   'kyazdani42/nvim-web-devicons',
   'L3MON4D3/LuaSnip',

@@ -14,4 +14,5 @@
     "enable": true,
     "filetypes": ["cpp", "c", "h"]
   },
+  "coc.preferences.highlight.enable": true,
 }

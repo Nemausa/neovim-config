@@ -9,17 +9,18 @@ local disable_treesitter_for_large_files = function(bufnr)
 end
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = { "c", "cpp", "python", "cmake", "markdown", "markdown_inline" },
+    ensure_installed = { "c", "cpp", "python", "cmake", "markdown", "markdown_inline", "lua"},
     highlight = {
         enable = true,
+        additional_vim_regex_highlighting = false,
         disable = function(lang, bufnr)
             return disable_treesitter_for_large_files(bufnr)
         end,
     },
 }
-
-vim.api.nvim_create_autocmd("BufReadPost", {
-  callback = function()
-    disable_treesitter_for_large_files(vim.api.nvim_get_current_buf())
-  end,
-})
+require 'nvim-treesitter.install'.compilers = { "clang" }
+-- vim.api.nvim_create_autocmd("BufReadPost", {
+--   callback = function()
+--     disable_treesitter_for_large_files(vim.api.nvim_get_current_buf())
+--   end,
+-- })

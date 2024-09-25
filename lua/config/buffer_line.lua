@@ -1,5 +1,6 @@
 require('bufferline').setup {
   options = {
+    theme = "onedark",
     mode = "buffers",
     separator_style = "thin", -- "thin", "slant", "padded_slant"
     always_show_bufferline = true, 

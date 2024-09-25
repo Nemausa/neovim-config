@@ -29,10 +29,8 @@ require('onedark').setup  {
 
   -- Custom Highlights --
   colors = {
-
   },
   highlights = {
-
   },
   -- Plugins Config --
   diagnostics = {
