@@ -7,5 +7,8 @@ require('toggleterm').setup({
     shell = vim.o.shell, -- 使用默认的 shell
     float_opts = {
         border = 'curved', -- 浮动窗口的边框样式（可选值有：'single', 'double', 'shadow', 'curved'）
+        width = 100,
+        height = 30,
+        winblend = 3,
       },
 })
