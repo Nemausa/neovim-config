@@ -15,7 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   'navarasu/onedark.nvim',
-  'projekt0n/github-nvim-theme',
   'nvim-telescope/telescope.nvim',
   'nvim-tree/nvim-tree.lua',
   'nvim-lualine/lualine.nvim',

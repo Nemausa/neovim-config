@@ -14,8 +14,7 @@ require('onedark').setup  {
   -- Options are italic, bold, underline, none
   -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
   code_style = {
-      comments = 'none',
-      --comments = 'italic',
+      comments = 'italic',
       keywords = 'none',
       functions = 'none',
       strings = 'none',
@@ -29,8 +28,20 @@ require('onedark').setup  {
 
   -- Custom Highlights --
   colors = {
+    bright_orange = "#ff8800",
+    green = '#98c379',  
+    yellow = '#61afef',
+    blue = '#61afef',
+    blue_light = '#98c379',
   },
   highlights = {
+    -- ["@string"] = {fg = '$blue_light', bg = 'None', fmt = 'bold'},
+    ["@string"] = {fg = '$blue_light', bg = 'None', fmt = 'bold'},
+    ["@keyword"] = {fg = '#c678dd', bg = 'None', fmt = 'bold'},
+    ["@variable"] = {fg = '#e06c75', bg = 'None', fmt = 'bold'},
+    ["@type"] = {fg = '#e5c07b', bg = 'None', fmt = 'bold'},
+    ["@function"] = {fg = '$blue', bg = 'None', fmt = 'bold'},
+    ["@function.builtin"] = {fg = '#ff0000'},
   },
   -- Plugins Config --
   diagnostics = {
