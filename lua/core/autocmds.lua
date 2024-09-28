@@ -14,7 +14,7 @@ autocmd InsertLeave * silent! write
 --vim.g.NERDCommenterCommentString = '// %s'
 vim.cmd('autocmd FileType c,cpp setlocal commentstring=//\\ %s')
 vim.api.nvim_create_augroup("SetTabOptionsGroup", { clear = true })
-vim.api.nvim_create_autocmd({"BufReadPost", "BufNewFile"}, {
+vim.api.nvim_create_autocmd({"BufReadPost", "BufNewFile", "BufReadPre"}, {
   group = "SetTabOptionsGroup",
   pattern = {"*.c", "*.cpp", "*.h"},
   callback = function()
