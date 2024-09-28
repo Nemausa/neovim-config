@@ -40,8 +40,6 @@ require('onedark').setup  {
     ["@keyword"] = {fg = '#c678dd', bg = 'None', fmt = 'bold'},
     ["@variable"] = {fg = '#e06c75', bg = 'None', fmt = 'bold'},
     ["@type"] = {fg = '#e5c07b', bg = 'None', fmt = 'bold'},
-    ["@function"] = {fg = '$blue', bg = 'None', fmt = 'bold'},
-    ["@function.builtin"] = {fg = '#ff0000'},
   },
   -- Plugins Config --
   diagnostics = {
@@ -52,3 +50,20 @@ require('onedark').setup  {
 }
 
 require('onedark').load()
+
+vim.cmd("highlight Normal guibg=#23272e")  -- 设置正常文本背景颜色
+vim.cmd("highlight Function guifg=#0087d2")
+vim.cmd("highlight Type guifg=#de935f")  -- 类型颜色
+vim.cmd("highlight Comment guifg=#7f9f7f")  -- 注释颜色
+vim.cmd("highlight String guifg=#98c379")  -- 字符串颜色
+vim.cmd("highlight Number guifg=#d19a66")  -- 标识符颜色
+
+vim.cmd("highlight Identifier guifg=#ff0000")  -- 标识符颜色
+vim.cmd("highlight Keyword guifg=#ff0000")  -- 关键字颜色
+vim.cmd("highlight Operator guifg=#ff0000")  -- 运算符颜色
+vim.cmd("highlight PreProc guifg=#ff0000")  -- 预处理器颜色
+vim.cmd("highlight Class guifg=#FF5C5C gui=bold")  -- Set class color (change to your desired color)
+vim.cmd("highlight CClass guifg=#FF5C5C gui=bold")  -- Set class color (change to your desired color)
+vim.cmd("highlight CPPClass guifg=#FF5C5C gui=bold")  -- Set class color (change to your desired color)
+vim.cmd("highlight CppClass guifg=#FF5C5C gui=bold")  -- Set class color (change to your desired color)
+

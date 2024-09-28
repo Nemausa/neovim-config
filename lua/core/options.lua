@@ -17,11 +17,12 @@ vim.opt.smartcase = true
 vim.g.ale_enabled = 0
 -- vim.opt.list = true
 -- vim.opt.listchars:append("space:·")
-vim.cmd [[highlight ExtraWhitespace guibg=lightgrey]]
+-- vim.cmd [[highlight ExtraWhitespace guibg=lightgrey]]
 vim.o.fixendofline = false
+vim.o.clipboard = 'unnamedplus'
+-- vim.o.shell = 'pwsh'
+vim.o.termguicolors = true -- 启用 24 位颜色
 
 vim.cmd [[
   let g:gutentags_ctags_exclude = ['.git', 'node_modules', 'build']
 ]]
-
-require 'nvim-treesitter.install'.compilers = { "clang" }
