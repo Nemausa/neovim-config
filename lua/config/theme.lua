@@ -36,10 +36,10 @@ require('onedark').setup  {
   },
   highlights = {
     -- ["@string"] = {fg = '$blue_light', bg = 'None', fmt = 'bold'},
-    ["@string"] = {fg = '$blue_light', bg = 'None', fmt = 'bold'},
-    ["@keyword"] = {fg = '#c678dd', bg = 'None', fmt = 'bold'},
-    ["@variable"] = {fg = '#e06c75', bg = 'None', fmt = 'bold'},
-    ["@type"] = {fg = '#e5c07b', bg = 'None', fmt = 'bold'},
+    ["@string"] = {fg = '$blue_light', bg = 'None'},
+    ["@keyword"] = {fg = '#c678dd', bg = 'None'},
+    ["@variable"] = {fg = '#e06c75', bg = 'None'},
+    ["@type"] = {fg = '#e5c07b', bg = 'None'},
   },
   -- Plugins Config --
   diagnostics = {
@@ -62,8 +62,8 @@ vim.cmd("highlight Identifier guifg=#ff0000")  -- 标识符颜色
 vim.cmd("highlight Keyword guifg=#ff0000")  -- 关键字颜色
 vim.cmd("highlight Operator guifg=#ff0000")  -- 运算符颜色
 vim.cmd("highlight PreProc guifg=#ff0000")  -- 预处理器颜色
-vim.cmd("highlight Class guifg=#FF5C5C gui=bold")  -- Set class color (change to your desired color)
-vim.cmd("highlight CClass guifg=#FF5C5C gui=bold")  -- Set class color (change to your desired color)
-vim.cmd("highlight CPPClass guifg=#FF5C5C gui=bold")  -- Set class color (change to your desired color)
-vim.cmd("highlight CppClass guifg=#FF5C5C gui=bold")  -- Set class color (change to your desired color)
+vim.cmd("highlight Class guifg=#FF5C5C")  -- Set class color (change to your desired color)
+vim.cmd("highlight CClass guifg=#FF5C5C")  -- Set class color (change to your desired color)
+vim.cmd("highlight CPPClass guifg=#FF5C5C")  -- Set class color (change to your desired color)
+vim.cmd("highlight CppClass guifg=#FF5C5C")  -- Set class color (change to your desired color)
 
