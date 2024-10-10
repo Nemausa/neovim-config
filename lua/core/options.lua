@@ -15,6 +15,7 @@ vim.opt.colorcolumn = '80'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.g.ale_enabled = 0
+vim.opt.termguicolors = true
 -- vim.opt.list = true
 -- vim.opt.listchars:append("space:·")
 -- vim.cmd [[highlight ExtraWhitespace guibg=lightgrey]]

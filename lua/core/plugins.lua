@@ -19,7 +19,7 @@ require('lazy').setup({
   'nvim-tree/nvim-tree.lua',
   'nvim-lualine/lualine.nvim',
   'akinsho/bufferline.nvim',
-  'nvim-treesitter/nvim-treesitter',
+  {'nvim-treesitter/nvim-treesitter', lazy=false},
   'sheerun/vim-polyglot',
   'vim-scripts/a.vim',
   'kyazdani42/nvim-web-devicons',

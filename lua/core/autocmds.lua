@@ -7,7 +7,7 @@ function SetTabOptions()
 end
 
 vim.cmd([[
-autocmd BufLeave,FocusLost * silent! wa
+autocmd BufLeave,FocusLost * silent! wa!
 autocmd InsertLeave * silent! write
 ]])
 
