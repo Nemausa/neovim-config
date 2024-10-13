@@ -10,4 +10,7 @@ require('toggleterm').setup({
         width = 100,
         height = 30,
       },
+    on_open = function(term)
+        vim.cmd("startinsert")
+    end,
 })
