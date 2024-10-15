@@ -17,3 +17,7 @@ npm install
 
 #### LSP
 - **ctags**: ctags -R --languages=C++ --c++-kinds=+px --fields=+iaS --extra=+q .
+
+#### snip
+pip3 install pynvim
+
