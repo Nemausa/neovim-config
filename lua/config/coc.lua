@@ -14,7 +14,7 @@ end
 
 -- Function to check and install Coc extensions
 local function install_coc_extensions()
-  local extensions = { "coc-pairs", "coc-clangd", "coc-pyright", "coc-tag"}
+  local extensions = { "coc-pairs", "coc-clangd", "coc-pyright", "coc-tag", "coc-snippets"}
 
   for _, extension in ipairs(extensions) do
     if vim.fn.empty(vim.fn.glob(get_coc_extension_path(extension))) > 0 then
