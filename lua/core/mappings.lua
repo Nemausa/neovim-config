@@ -1,4 +1,8 @@
 local map = vim.keymap.set
+map('n', '<F1>', '<nop>', { noremap = true, silent = true })
+map('i', '<F1>', '<nop>', { noremap = true, silent = true })
+map('v', '<F1>', '<nop>', { noremap = true, silent = true })
+
 map('i', 'jj', '<Esc>')
 map('i', 'kk', '<Esc>')
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
