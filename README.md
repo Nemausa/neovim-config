@@ -20,4 +20,5 @@ npm install
 
 #### snip
 pip3 install pynvim
-
+CocInstall coc-pyright
+CocInstall coc-snippets
