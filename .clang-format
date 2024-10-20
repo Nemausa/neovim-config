@@ -13,3 +13,4 @@ IncludeBlocks: Preserve
 #   - Regex:           '.*'
 #     Priority:       4
 SortIncludes: false
+AllowShortFunctionsOnASingleLine: None
