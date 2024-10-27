@@ -15,4 +15,11 @@
     "filetypes": ["cpp", "c", "h"]
   },
   "coc.preferences.highlight.enable": true,
+  "languageserver": {
+    "qml": {
+      "command": "qmlls",
+      "filetypes": ["qml"],
+      "rootPatterns": ["CMakeLists.txt", "compile_commands.json"]
+    }
+  }
 }
