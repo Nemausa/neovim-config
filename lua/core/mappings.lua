@@ -60,8 +60,7 @@ end
 
 vim.api.nvim_create_user_command('Ctags', function()
   local cwd = vim.fn.getcwd()
-  local result = vim.fn.system('ctags -R --languages=C++ --c++-kinds=+px --fields=+iaS --extra=+q ' .. cwd)
-  print(result)
+  local result = vim.fn.system('ctags -R --fields=+1 ' .. cwd)
 end, {})
 map('n', '<leader>ct', ':Ctags<CR>')
 
