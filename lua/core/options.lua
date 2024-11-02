@@ -4,7 +4,7 @@ if vim.fn.has('nvim-0.8') == 1 then
 end
 
 --vim.opt.fileencoding = 'utf-8'
-vim.g.mapleader = ','
+vim.g.mapleader = ' '
 vim.opt.expandtab=true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
