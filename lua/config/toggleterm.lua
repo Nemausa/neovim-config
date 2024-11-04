@@ -11,6 +11,6 @@ require("toggleterm").setup({
   shade_terminals = true,
   shading_factor = 2,
   start_in_insert = true,
-  direction = "tab",
+  direction = "float",
   close_on_exit = true,
 })
