@@ -5,6 +5,7 @@ map('v', '<F1>', '<nop>', { noremap = true, silent = true })
 
 map('i', 'jj', '<Esc>')
 map('i', 'kk', '<Esc>')
+map('n', '<leader>ca', 'gg"+yG')
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 
 -- Comment
