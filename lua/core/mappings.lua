@@ -7,6 +7,10 @@ map('i', 'jj', '<Esc>')
 map('i', 'kk', '<Esc>')
 map('n', '<leader>ca', 'gg"+yG')
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
+map('n', '<leader>r', ':!cd bin && ./main <CR>', { noremap = true, silent = true })
+map('n', '<leader>b', ':!cd build && cmake .. && make -j<CR>', { noremap = true, silent = true })
+-- map('n', '<leader>r', ':TermExec cmd="cd bin && ./main"<CR>', { noremap = true, silent = true })
+-- map('n', '<leader>b', ':TermExec cmd="cd build && cmake .. && make -j"<CR>', { noremap = true, silent = true })
 
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "Toggle Comment", remap = true })
