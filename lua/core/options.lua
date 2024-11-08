@@ -16,6 +16,10 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.g.ale_enabled = 0
 vim.opt.termguicolors = true
+vim.opt.lazyredraw = true
+vim.opt.ttyfast = true
+vim.opt.hidden = true
+vim.o.shada = "'100,<100,s10,h"
 -- vim.opt.list = true
 -- vim.opt.listchars:append("space:·")
 -- vim.cmd [[highlight ExtraWhitespace guibg=lightgrey]]

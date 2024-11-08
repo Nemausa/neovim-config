@@ -9,6 +9,7 @@ map('n', '<leader>ca', 'gg"+yG')
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 map('n', '<leader>r', ':!cd bin && ./main <CR>', { noremap = true, silent = true })
 map('n', '<leader>b', ':!cd build && cmake .. && make -j<CR>', { noremap = true, silent = true })
+map('n', '<C-o>', '<C-o>zz', { noremap = true, silent = true })
 -- map('n', '<leader>r', ':TermExec cmd="cd bin && ./main"<CR>', { noremap = true, silent = true })
 -- map('n', '<leader>b', ':TermExec cmd="cd build && cmake .. && make -j"<CR>', { noremap = true, silent = true })
 
@@ -94,7 +95,7 @@ map('n', '<leader>fc', '<cmd>lua require("telescope.builtin").grep_string({ sear
 map("n", "<leader>v", ':vsplit | term<CR>', { desc = "terminal new horizontal term" })
 map("n", "<leader>h", ':split | term<CR>', { desc = "terminal new horizontal term" })
 map('t', '<leader>tq', [[<C-\><C-n>:q<CR>]])
-map('n', '<leader>to', ':belowright new | resize 10 | terminal<CR>i', { noremap = true, silent = true })
+map('n', '<leader>to', ':belowright new | resize 20 | terminal<CR>i', { noremap = true, silent = true })
 
 
 -- switch header or source file
