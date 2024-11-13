@@ -27,6 +27,7 @@ require('lazy').setup({
   'Nemausa/friendly-snippets', 
 --   'honza/vim-snippets',
   'tpope/vim-fugitive',
+  "nvim-lua/plenary.nvim",
   'sindrets/diffview.nvim',
   'lewis6991/gitsigns.nvim',
   'mfussenegger/nvim-dap',

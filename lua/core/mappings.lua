@@ -92,8 +92,8 @@ local telescope_builtin = require('telescope.builtin')
 map('n', '<leader>fc', '<cmd>lua require("telescope.builtin").grep_string({ search = vim.fn.input("Search for: "), search_dirs = { vim.fn.expand("%") } })<CR>')
 
 -- new terminal
-map("n", "<leader>v", ':vsplit | term<CR>', { desc = "terminal new horizontal term" })
-map("n", "<leader>h", ':split | term<CR>', { desc = "terminal new horizontal term" })
+-- map("n", "<leader>v", ':vsplit | term<CR>', { desc = "terminal new horizontal term" })
+-- map("n", "<leader>h", ':split | term<CR>', { desc = "terminal new horizontal term" })
 map('t', '<leader>tq', [[<C-\><C-n>:q<CR>]])
 map('n', '<leader>to', ':belowright new | resize 40 | terminal<CR>i', { noremap = true, silent = true })
 

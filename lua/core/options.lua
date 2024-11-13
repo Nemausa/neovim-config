@@ -28,6 +28,7 @@ vim.o.clipboard = 'unnamedplus'
 -- vim.o.shell = 'pwsh'
 vim.o.termguicolors = true -- 启用 24 位颜色
 
+
 vim.cmd [[
   let g:gutentags_ctags_exclude = ['.git', 'node_modules', 'build']
 ]]
