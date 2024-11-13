@@ -23,7 +23,7 @@ require('lazy').setup({
   'sheerun/vim-polyglot',
   'vim-scripts/a.vim',
   'kyazdani42/nvim-web-devicons',
---   'L3MON4D3/LuaSnip',
+  'L3MON4D3/LuaSnip',
   'Nemausa/friendly-snippets', 
 --   'honza/vim-snippets',
   'tpope/vim-fugitive',
@@ -36,6 +36,9 @@ require('lazy').setup({
   'theHamsta/nvim-dap-virtual-text',
   'nvim-neotest/nvim-nio',
   'neovim/nvim-lspconfig',
+  'danymat/neogen',
+  'stevearc/aerial.nvim',
+  'tpope/vim-abolish',
   {'neoclide/coc.nvim', branch = 'release'},
   -- 'folke/which-key.nvim',
   {
