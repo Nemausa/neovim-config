@@ -10,6 +10,7 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 map('n', '<leader>r', ':!cd bin && ./main <CR>', { noremap = true, silent = true })
 map('n', '<leader>b', ':!cd build && cmake .. && make -j<CR>', { noremap = true, silent = true })
 map('n', '<C-o>', '<C-o>zz', { noremap = true, silent = true })
+map('n', '<leader>w', '<C-w><C-w>)', { noremap = true, silent = true })
 -- map('n', '<leader>r', ':TermExec cmd="cd bin && ./main"<CR>', { noremap = true, silent = true })
 -- map('n', '<leader>b', ':TermExec cmd="cd build && cmake .. && make -j"<CR>', { noremap = true, silent = true })
 
