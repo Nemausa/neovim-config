@@ -1,3 +1,4 @@
+require('core.options')
 require('core.plugins')
 require('config.coc')
 require('config.lualine')
@@ -15,6 +16,5 @@ require('config.aerial')
 -- require('config.neogen')
 -- require('config.symbols')
 
-require('core.options')
 require('core.mappings')
 require('core.autocmds')

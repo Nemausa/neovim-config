@@ -78,3 +78,14 @@ require('diffview').setup({
     },
     enhanced_diff_hl = true,
 })
+
+vim.api.nvim_create_user_command('CustomDiffviewOpen', function()
+  local nvim_tree_view = require'nvim-tree.view'
+  if nvim_tree_view.is_visible() then
+      vim.cmd('NvimTreeClose')
+  end
+
+  vim.cmd('DiffviewOpen')
+end, {})
+vim.keymap.set('n', '<leader>do', ':CustomDiffviewOpen<CR>')
+vim.keymap.set('n', '<leader>dc', ':DiffviewClose<CR>')

@@ -72,27 +72,6 @@ vim.api.nvim_create_user_command('Ctags', function()
 end, {})
 map('n', '<leader>ct', ':Ctags<CR>')
 
---Telescope
-map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
-map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
-map("n", "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
-map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
-map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
-map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
-map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
-map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
-map("n", "<leader>th", "<cmd>Telescope themes<CR>", { desc = "telescope nvchad themes" })
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
-map(
-  "n",
-  "<leader>fa",
-  "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
-  { desc = "telescope find all files" }
-)
-local telescope_builtin = require('telescope.builtin')
-map('n', '<leader>fc', '<cmd>lua require("telescope.builtin").grep_string({ search = vim.fn.input("Search for: "), search_dirs = { vim.fn.expand("%") } })<CR>')
-
 -- new terminal
 -- map("n", "<leader>v", ':vsplit | term<CR>', { desc = "terminal new horizontal term" })
 -- map("n", "<leader>h", ':split | term<CR>', { desc = "terminal new horizontal term" })
@@ -105,10 +84,6 @@ map('x', '<A-o>', ":A<CR>")
 map('n', '<A-o>', ":A<CR>")
 map('n', '<leader>z', ':A<CR>')
 
--- nvimtree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
-
 -- switch tab
 map('n', '<Tab>', ':BufferLineCycleNext<CR>', { desc = "buffer goto next",  noremap = true, silent = true })
 map('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { desc = "buffer goto prev",  noremap = true, silent = true })
@@ -118,16 +93,3 @@ local opts = { noremap = true, silent = true }
 for i = 1, 9 do
   map('n', '<A-' .. i .. '>', ':tabn ' .. i .. '<CR>', opts)
 end
-
--- Diffview
-vim.api.nvim_create_user_command('CustomDiffviewOpen', function()
-  local nvim_tree_view = require'nvim-tree.view'
-  if nvim_tree_view.is_visible() then
-      vim.cmd('NvimTreeClose')
-  end
-
-  vim.cmd('DiffviewOpen')
-end, {})
-map('n', '<leader>do', ':CustomDiffviewOpen<CR>')
-map('n', '<leader>dc', ':DiffviewClose<CR>')
-map('n', '<leader>ta', ':AerialToggle!<CR>', { noremap = true, silent = true })
