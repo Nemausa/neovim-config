@@ -35,7 +35,7 @@ require('lazy').setup({
   'rcarriga/nvim-dap-ui',
   'theHamsta/nvim-dap-virtual-text',
   'nvim-neotest/nvim-nio',
-  'neovim/nvim-lspconfig',
+  -- 'neovim/nvim-lspconfig',
   'danymat/neogen',
   'stevearc/aerial.nvim',
   'tpope/vim-abolish',

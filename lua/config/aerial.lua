@@ -103,6 +103,7 @@ require("aerial").setup({
     "Class",
     "Constructor",
     "Enum",
+    "EnumMember",
     "Function",
     "Interface",
     "Module",

@@ -93,3 +93,10 @@ local opts = { noremap = true, silent = true }
 for i = 1, 9 do
   map('n', '<A-' .. i .. '>', ':tabn ' .. i .. '<CR>', opts)
 end
+
+vim.api.nvim_del_keymap('n', '<Space>ihn')
+vim.api.nvim_del_keymap('n', '<Space>is')
+vim.api.nvim_del_keymap('n', '<Space>ih')
+vim.api.nvim_del_keymap('i', '<Space>ihn')
+vim.api.nvim_del_keymap('i', '<Space>is')
+vim.api.nvim_del_keymap('i', '<Space>ih')
