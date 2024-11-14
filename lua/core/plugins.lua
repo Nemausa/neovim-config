@@ -38,6 +38,7 @@ require('lazy').setup({
   -- 'neovim/nvim-lspconfig',
   'danymat/neogen',
   'stevearc/aerial.nvim',
+  'preservim/tagbar',
   'tpope/vim-abolish',
   {'neoclide/coc.nvim', branch = 'release'},
   -- 'folke/which-key.nvim',

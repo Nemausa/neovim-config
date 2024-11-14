@@ -38,3 +38,21 @@ vim.api.nvim_create_autocmd({"BufReadPost", "BufNewFile", "BufReadPre"}, {
 --     end
 --   end,
 -- })
+vim.g.tagbar_type_c = {
+    kinds = {
+        'f:functions',  -- 函数
+        'e:enums',      -- 枚举
+        's:structs'     -- 结构体
+    },
+    sro = '::',          -- 符号分隔符
+    kind2scope = {
+        e = 'enum',
+        s = 'struct'
+    },
+    scope2kind = {
+        enum = 'e',
+        struct = 's'
+    }
+}
+
+

@@ -68,7 +68,7 @@ end
 
 vim.api.nvim_create_user_command('Ctags', function()
   local cwd = vim.fn.getcwd()
-  local result = vim.fn.system('ctags -R --exclude=output  --exclude=linux-5.10 --languages=C,C++ --fields=+l  ' .. cwd)
+  local result = vim.fn.system('ctags -R --exclude=output  --exclude=linux-5.10 --languages=C,C++ --fields=+l+K --extra=+q --c-kinds=+p+f+g+u+s+e+m+t+v  ' .. cwd)
 end, {})
 map('n', '<leader>ct', ':Ctags<CR>')
 
@@ -93,6 +93,8 @@ local opts = { noremap = true, silent = true }
 for i = 1, 9 do
   map('n', '<A-' .. i .. '>', ':tabn ' .. i .. '<CR>', opts)
 end
+
+map('n', '<F8>', ':TagbarToggle<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_del_keymap('n', '<Space>ihn')
 vim.api.nvim_del_keymap('n', '<Space>is')
