@@ -30,6 +30,9 @@ vim.o.termguicolors = true -- 启用 24 位颜色
 vim.g.tagbar_width = 30  -- 设置侧边栏宽度
 vim.g.tagbar_position = 'left'  -- 设置侧边栏在左侧显示
 
+-- vim.g.tagbar_width = 30           -- 设置宽度为 30 列
+vim.g.tagbar_autofocus = 1        -- 自动聚焦 tagbar 窗口
+-- vim.g.tagbar_position = 'right'   -- 将 tagbar 窗口显示在右侧
 
 vim.cmd [[
   let g:gutentags_ctags_exclude = ['.git', 'node_modules', 'build']
