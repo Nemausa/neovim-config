@@ -95,6 +95,7 @@ for i = 1, 9 do
 end
 
 map('n', '<F8>', ':TagbarToggle<CR>', { noremap = true, silent = true })
+map('n', '<leader>tt', ':TagbarToggle<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_del_keymap('n', '<Space>ihn')
 vim.api.nvim_del_keymap('n', '<Space>is')

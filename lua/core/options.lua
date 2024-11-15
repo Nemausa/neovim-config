@@ -21,7 +21,7 @@ vim.g.python3_host_prog = find_python
 vim.o.fixendofline = false
 vim.o.clipboard = 'unnamedplus'
 vim.o.termguicolors = true -- 启用 24 位颜色
--- vim.g.tagbar_width = 30  -- 设置侧边栏宽度
+vim.g.tagbar_width = 30  -- 设置侧边栏宽度
 vim.g.tagbar_position = 'left'  -- 设置侧边栏在左侧显示
 vim.g.tagbar_autofocus = 1        -- 自动聚焦 tagbar 窗口
 
