@@ -13,6 +13,7 @@ require('config.gitsigns')
 require('config.dap_config')
 require('config.toggleterm')
 require('config.aerial')
+require('config.colorizer')
 -- require('config.neogen')
 -- require('config.symbols')
 
