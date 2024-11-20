@@ -3,7 +3,6 @@ if vim.fn.has('nvim-0.8') == 1 then
   vim.g.did_load_filetypes=0
 end
 
---vim.opt.fileencoding = 'utf-8'
 vim.g.mapleader = ' '
 vim.opt.expandtab=true
 vim.opt.shiftwidth = 4
@@ -20,11 +19,7 @@ vim.opt.lazyredraw = true
 vim.g.python3_host_prog = find_python
 vim.o.fixendofline = false
 vim.o.clipboard = 'unnamedplus'
-vim.o.termguicolors = true -- 启用 24 位颜色
-vim.g.tagbar_width = 30  -- 设置侧边栏宽度
-vim.g.tagbar_position = 'left'  -- 设置侧边栏在左侧显示
-vim.g.tagbar_autofocus = 1        -- 自动聚焦 tagbar 窗口
-
-vim.cmd [[
-  let g:gutentags_ctags_exclude = ['.git', 'node_modules', 'build']
-]]
+vim.o.termguicolors = true
+vim.g.tagbar_width = 30
+vim.g.tagbar_position = 'left'
+vim.g.tagbar_autofocus = 1

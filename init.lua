@@ -1,5 +1,8 @@
 require('core.options')
 require('core.plugins')
+require('core.mappings')
+require('core.autocmds')
+
 require('config.coc')
 require('config.lualine')
 require('config.nvimtree')
@@ -14,8 +17,3 @@ require('config.dap_config')
 require('config.toggleterm')
 require('config.aerial')
 require('config.colorizer')
--- require('config.neogen')
--- require('config.symbols')
-
-require('core.mappings')
-require('core.autocmds')

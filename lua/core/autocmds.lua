@@ -20,7 +20,6 @@ vim.cmd([[
   autocmd InsertLeave * silent! write
 ]])
 
---vim.g.NERDCommenterCommentString = '// %s'
 vim.cmd('autocmd FileType c,cpp setlocal commentstring=//\\ %s')
 vim.api.nvim_create_augroup("SetTabOptionsGroup", { clear = true })
 vim.api.nvim_create_autocmd({"BufReadPost", "BufNewFile", "BufReadPre"}, {
@@ -31,20 +30,13 @@ vim.api.nvim_create_autocmd({"BufReadPost", "BufNewFile", "BufReadPre"}, {
   end,
 })
 
--- vim.api.nvim_create_autocmd("VimEnter", {
---   callback = function()
---     if vim.fn.argc() == 0 then
---       require("nvim-tree.api").tree.open()
---     end
---   end,
--- })
 vim.g.tagbar_type_c = {
     kinds = {
-        'f:functions',  -- 函数
-        'e:enums',      -- 枚举
-        's:structs'     -- 结构体
+        'f:functions',
+        'e:enums',
+        's:structs'
     },
-    sro = '::',          -- 符号分隔符
+    sro = '::',
     kind2scope = {
         e = 'enum',
         s = 'struct'

@@ -67,7 +67,6 @@ require('gitsigns').setup({
     map('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>')
     map('n', '<leader>hD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')
     map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>')
-
   end
   
 })
@@ -89,3 +88,5 @@ vim.api.nvim_create_user_command('CustomDiffviewOpen', function()
 end, {})
 vim.keymap.set('n', '<leader>do', ':CustomDiffviewOpen<CR>')
 vim.keymap.set('n', '<leader>dc', ':DiffviewClose<CR>')
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
+vim.keymap.set("n", "<leader>gcl", ":Gitsigns toggle_current_line_blame<CR>", {})

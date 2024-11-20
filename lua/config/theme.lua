@@ -1,5 +1,4 @@
 require('onedark').setup  {
-  -- Main options --
   style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
   transparent = false,  -- Show/hide background
   term_colors = true, -- Change terminal color as per the selected theme style
@@ -7,7 +6,7 @@ require('onedark').setup  {
   cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
   -- toggle theme style ---
-  toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+  toggle_style_key = "<leader>ts", -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
   toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
 
   -- Change code style ---
@@ -51,19 +50,18 @@ require('onedark').setup  {
 
 require('onedark').load()
 
-vim.cmd("highlight Normal guibg=#23272e")  -- 设置正常文本背景颜色
+vim.cmd("highlight Normal guibg=#23272e")
 vim.cmd("highlight Function guifg=#0087d2")
-vim.cmd("highlight Type guifg=#de935f")  -- 类型颜色
-vim.cmd("highlight Comment guifg=#7f9f7f")  -- 注释颜色
-vim.cmd("highlight String guifg=#98c379")  -- 字符串颜色
-vim.cmd("highlight Number guifg=#d19a66")  -- 标识符颜色
+vim.cmd("highlight Type guifg=#de935f")
+vim.cmd("highlight Comment guifg=#7f9f7f")
+vim.cmd("highlight String guifg=#98c379")
+vim.cmd("highlight Number guifg=#d19a66")
 
-vim.cmd("highlight Identifier guifg=#ff0000")  -- 标识符颜色
-vim.cmd("highlight Keyword guifg=#ff0000")  -- 关键字颜色
-vim.cmd("highlight Operator guifg=#ff0000")  -- 运算符颜色
-vim.cmd("highlight PreProc guifg=#ff0000")  -- 预处理器颜色
-vim.cmd("highlight Class guifg=#FF5C5C")  -- Set class color (change to your desired color)
-vim.cmd("highlight CClass guifg=#FF5C5C")  -- Set class color (change to your desired color)
-vim.cmd("highlight CPPClass guifg=#FF5C5C")  -- Set class color (change to your desired color)
-vim.cmd("highlight CppClass guifg=#FF5C5C")  -- Set class color (change to your desired color)
-
+vim.cmd("highlight Identifier guifg=#ff0000")
+vim.cmd("highlight Keyword guifg=#ff0000")
+vim.cmd("highlight Operator guifg=#ff0000")
+vim.cmd("highlight PreProc guifg=#ff0000")
+vim.cmd("highlight Class guifg=#FF5C5C")
+vim.cmd("highlight CClass guifg=#FF5C5C")
+vim.cmd("highlight CPPClass guifg=#FF5C5C")
+vim.cmd("highlight CppClass guifg=#FF5C5C")

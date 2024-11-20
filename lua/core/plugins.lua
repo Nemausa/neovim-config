@@ -25,7 +25,6 @@ require('lazy').setup({
   'kyazdani42/nvim-web-devicons',
   'L3MON4D3/LuaSnip',
   'Nemausa/friendly-snippets', 
---   'honza/vim-snippets',
   'tpope/vim-fugitive',
   "nvim-lua/plenary.nvim",
   'sindrets/diffview.nvim',
@@ -35,20 +34,12 @@ require('lazy').setup({
   'rcarriga/nvim-dap-ui',
   'theHamsta/nvim-dap-virtual-text',
   'nvim-neotest/nvim-nio',
-  -- 'neovim/nvim-lspconfig',
   'danymat/neogen',
   'stevearc/aerial.nvim',
   'preservim/tagbar',
   'norcalli/nvim-colorizer.lua',
   'tpope/vim-abolish',
   {'neoclide/coc.nvim', branch = 'release'},
-  -- 'folke/which-key.nvim',
-  {
-    'iamcco/markdown-preview.nvim',
-    run = 'cd app && npm install',
-    config = function()
-      vim.g.mkdp_filetypes = { 'markdown' }
-    end
-  },
+  'iamcco/markdown-preview.nvim',
   'akinsho/toggleterm.nvim',
 })

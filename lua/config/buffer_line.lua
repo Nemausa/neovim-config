@@ -27,3 +27,12 @@ require('bufferline').setup {
     }
   }
 }
+local map = vim.keymap.set
+map('n', '<Tab>', ':BufferLineCycleNext<CR>', { desc = "buffer goto next",  noremap = true, silent = true })
+map('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { desc = "buffer goto prev",  noremap = true, silent = true })
+map('n', '<leader>bn', ':bnext | bd#<CR>', { desc = "close current tab and buffer goto next",  noremap = true, silent = true })
+map('n', '<leader>ba', ':bufdo bd <CR>', { desc = "close all buffers",  noremap = true, silent = true })
+local opts = { noremap = true, silent = true }
+for i = 1, 9 do
+  map('n', '<A-' .. i .. '>', ':tabn ' .. i .. '<CR>', opts)
+end
